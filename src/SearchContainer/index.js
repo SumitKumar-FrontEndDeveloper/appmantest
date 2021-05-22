@@ -33,7 +33,6 @@ const SearchContainer = ({ addPoke }) => {
     })();
   }, [])
   const searchPokes = (e)=> {
-    console.log(e.target.value)
     if(e.target.value.length) {
       const searchData = pokes.filter((val,key)=> {
         return e.target.value.toLowerCase()==val.name.toLowerCase() || e.target.value.toLowerCase()==val.type.toLowerCase()
@@ -48,16 +47,14 @@ const SearchContainer = ({ addPoke }) => {
       setPokes(pokesMain)
     }
   }
-  const addPokes = (val, key) =>{
-      //remove the card from list 
-      setPokes((prevState) => {
-        const newList = prevState.slice(0,key).concat(prevState.slice(key+1));
-        setPokeMain(newList)
+  const addPokes = async (val, key) =>{
+      const realIndex = pokesMain.findIndex((value) => value.id == val.id)
+      await setPokeMain((prevState) => {
+        const newList = prevState.slice(0,realIndex).concat(prevState.slice(realIndex+1));
+        setPokes(newList)
         dispatch(pokeListRequest({pokeList: newList}))
         return newList
       })
-      
-      console.log(val)
       addPoke(val)
   }
   
