@@ -21,7 +21,7 @@ const MyPokes = ({ addMainTask,addPokes,pokes, deletePoke, onMouseEnterForDelete
           </div>
          <S.BoxContainer>
            {pokes.length>0 && pokes.map((val,key) => <div className="box" key={key} onMouseEnter={()=>onMouseEnter(key)} onMouseLeave={()=>onMouseEnter(key)}>
-           {val.deleteBtn && <div className="close" onClick={() => delPoke(key)}></div>}
+            <div className="close" onClick={() => delPoke(key)}></div>
             <div className="leftBox">
               <img src={val.imageUrl}/>
             </div>
