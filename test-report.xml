@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/sumit/Desktop/appmantest/src/actions/pokes/pokes.spec.js">
+    <testCase name="test all action in should create an action to add a todo" duration="4"/>
+    <testCase name="Action Creator for Articles list should dispatch action with status added" duration="3"/>
+    <testCase name="Error case of action should dispatch action with error" duration="2"/>
+  </file>
+  <file path="/Users/sumit/Desktop/appmantest/src/reducers/poke.reducer.spec.js">
+    <testCase name="Cutomer Profile OTP reducers should return the initial state" duration="2"/>
+    <testCase name="Cutomer Profile OTP reducers should handle POKE_LIST_FETCH_REQUEST" duration="0"/>
+    <testCase name="Cutomer Profile OTP reducers should handle POKE_LIST_FETCH_FAILURE" duration="1"/>
+  </file>
+  <file path="/Users/sumit/Desktop/appmantest/src/MyPokes/mypoke.spec.js">
+    <testCase name="To Do List test test if there is access token" duration="69"/>
+  </file>
+  <file path="/Users/sumit/Desktop/appmantest/src/SearchContainer/poke-search.spec.js">
+    <testCase name="To Do List test test if there is access token" duration="64"/>
+  </file>
+</testExecutions>

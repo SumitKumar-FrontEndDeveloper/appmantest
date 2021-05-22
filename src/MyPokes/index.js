@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./MyPokes.css";
 import * as S from './MyPokes.styled'
 
-const MyPokes = ({ addMainTask,addPokes,pokes, deletePoke, onMouseEnterForDeleteItem }) => {
+const MyPokes = ({ addMainTask,addPokes,pokes, deletePoke }) => {
   const [clickAdd, setClickAdd] = useState(false);
   const addPoke =() => {
       addPokes(!clickAdd)
@@ -10,9 +10,7 @@ const MyPokes = ({ addMainTask,addPokes,pokes, deletePoke, onMouseEnterForDelete
  const delPoke =(key) =>{
   deletePoke(key)
  }
- const onMouseEnter =(index) => {
-  onMouseEnterForDeleteItem(index)
-}
+
   console.log("pokes",pokes)
   return (
     <div>
@@ -20,7 +18,7 @@ const MyPokes = ({ addMainTask,addPokes,pokes, deletePoke, onMouseEnterForDelete
               <h2>My Pokedex</h2>
           </div>
          <S.BoxContainer>
-           {pokes.length>0 && pokes.map((val,key) => <div className="box" key={key} onMouseEnter={()=>onMouseEnter(key)} onMouseLeave={()=>onMouseEnter(key)}>
+           {pokes && pokes.length>0 && pokes.map((val,key) => <div className="box" key={key} >
             <div className="close" onClick={() => delPoke(key)}></div>
             <div className="leftBox">
               <img src={val.imageUrl}/>

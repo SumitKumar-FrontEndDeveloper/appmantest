@@ -29,20 +29,13 @@ const App = () => {
         return prevState.slice(0,index).concat(prevState.slice(index+1));
       })
   }
-  const onHoverMouse = (index) =>{
-    setupdateState(Math.random(1000))
-    setMyPokes((prevState) => {
-      let data = prevState;
-      data[index].deleteBtn = !data[index].deleteBtn;
-      return data
-    })
-  }
+
   return (
       <div className="App">
         {toggle && <S.PopUpContainer onClick={toggleSearchPopup} id="popup">
             <SearchContainer addPoke={addPoker}/>
         </S.PopUpContainer>}
-        <MyPokes addPokes={setToggle} pokes={myPokes} deletePoke={deletePoke} onMouseEnterForDeleteItem={onHoverMouse} />   
+        <MyPokes addPokes={setToggle} pokes={myPokes} deletePoke={deletePoke}  />   
         
       </div>
     );
